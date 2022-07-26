@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import UseState from './UseState';
+import UseEffect from './UseEffect';
+import CLassC from './ClassC';
+import {Routes,Route} from "react-router-dom"
+import Home from './Home';
+import About from './About';
+import Product from './Product';
+import Nav from './Nav';
+import Subscribe from './Subscribe';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav/>
+     <Routes>
+      <Route path='/' element={<Home/>}></Route>
+      <Route path='about' element = {<About/>}></Route>
+      <Route path='product/:id' element = {<Product/>}></Route>
+      <Route path='subscribe' element = {<Subscribe/>}></Route>
+     </Routes>
     </div>
   );
 }
