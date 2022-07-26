@@ -9,8 +9,11 @@ import About from './About';
 import Product from './Product';
 import Nav from './Nav';
 import Subscribe from './Subscribe';
+import { useNavigate } from 'react-router-dom';
+
 
 function App() {
+  let navigate  = useNavigate()
   return (
     <div className="App">
       <Nav/>
@@ -19,6 +22,7 @@ function App() {
       <Route path='about' element = {<About/>}></Route>
       <Route path='product/:id' element = {<Product/>}></Route>
       <Route path='subscribe' element = {<Subscribe/>}></Route>
+      <Route path='*' element = {()=>navigate("/")}></Route>
      </Routes>
     </div>
   );

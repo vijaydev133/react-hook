@@ -5,6 +5,13 @@ function Product() {
     let navigate = useNavigate()
     let params = useParams()
     console.log("params",params)
+
+    React.useEffect(()=>{
+        return ()=>{
+            console.log("will unmount")
+        }
+    },[])
+    
   return (
     <div>
 Product
